@@ -24,9 +24,11 @@ std::string CBase64::Encode(const std::vector<uint8_t>& data) {
 
 	switch (data.size() % 3) {
 		case 1:
+			encodedStream.seekp(-2, std::ios_base::end);
 			encodedStream << "==";
 			break;
 		case 2:
+			encodedStream.seekp(-1, std::ios_base::end);
 			encodedStream << "=";
 			break;
 	}
