@@ -7,7 +7,7 @@ This C++ package provides a client implementation for interacting with an HTTP T
 To use this package, you can clone the repository and compile it using a C++ compiler:
 
 ```bash
-git clone https://github.com/NIR3X/HttpTransmit.cpp
+git clone https://github.com/NIR3X/HttpTransmit.cpp --recurse-submodules
 cd HttpTransmit.cpp
 make
 ```
