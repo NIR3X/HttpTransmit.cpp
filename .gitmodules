@@ -1,0 +1,6 @@
+[submodule "Fxms.cpp"]
+	path = Fxms.cpp
+	url = https://github.com/NIR3X/Fxms.cpp
+[submodule "HttpRequest.cpp"]
+	path = HttpRequest.cpp
+	url = https://github.com/NIR3X/HttpRequest.cpp
