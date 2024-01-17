@@ -12,15 +12,15 @@ std::string CBase64::Encode(const std::vector<uint8_t>& input) {
 	// Iterate through the input string in groups of 3 bytes
 	for (size_t i = 0; i < input.size(); i += 3) {
 		// Extract 3 bytes from the input
-		unsigned char byte1 = input[i];
-		unsigned char byte2 = (i + 1 < input.size()) ? input[i + 1] : 0;
-		unsigned char byte3 = (i + 2 < input.size()) ? input[i + 2] : 0;
+		uint8_t byte1 = input[i];
+		uint8_t byte2 = (i + 1 < input.size()) ? input[i + 1] : 0;
+		uint8_t byte3 = (i + 2 < input.size()) ? input[i + 2] : 0;
 
 		// Encode the 3 bytes into 4 base64 characters
-		unsigned char enc1 = byte1 >> 2;
-		unsigned char enc2 = ((byte1 & 0x03) << 4) | (byte2 >> 4);
-		unsigned char enc3 = ((byte2 & 0x0F) << 2) | (byte3 >> 6);
-		unsigned char enc4 = byte3 & 0x3F;
+		uint8_t enc1 = byte1 >> 2;
+		uint8_t enc2 = ((byte1 & 0x03) << 4) | (byte2 >> 4);
+		uint8_t enc3 = ((byte2 & 0x0F) << 2) | (byte3 >> 6);
+		uint8_t enc4 = byte3 & 0x3F;
 
 		// Append the encoded characters to the output stream
 		encodedStream << Alphabet[enc1] << Alphabet[enc2] << Alphabet[enc3] << Alphabet[enc4];
@@ -59,9 +59,9 @@ std::vector<uint8_t> CBase64::Decode(const std::string& input) {
 		char char4 = reverseLookup[input[i + 3]];
 
 		// Decode the 4 characters into 3 bytes
-		unsigned char byte1 = (char1 << 2) | (char2 >> 4);
-		unsigned char byte2 = ((char2 & 0x0F) << 4) | (char3 >> 2);
-		unsigned char byte3 = ((char3 & 0x03) << 6) | char4;
+		uint8_t byte1 = (char1 << 2) | (char2 >> 4);
+		uint8_t byte2 = ((char2 & 0x0F) << 4) | (char3 >> 2);
+		uint8_t byte3 = ((char3 & 0x03) << 6) | char4;
 
 		// Append the decoded bytes to the output stream
 		decodedStream.push_back(byte1);
