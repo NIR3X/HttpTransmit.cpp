@@ -8,7 +8,7 @@ OBJ = $(SRC:.cpp=.o)
 DEST = HttpTransmit.a
 
 build: fxms http_request $(OBJ)
-	$(AR) r -o $(DEST) $(OBJ) Fxms.cpp/Fxms.a HttpRequest.cpp/HttpRequest.a
+	$(AR) r -o $(DEST) $(OBJ)
 
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
