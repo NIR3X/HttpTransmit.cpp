@@ -47,7 +47,7 @@ int main() {
 		return 1;
 	}
 
-	CHttpTransmit::CResponse resp = httpTransmit.TransmitTo("https://example.com", "GET", {}, {});
+	CHttpTransmit::CResponse resp = httpTransmit.TransmitTo("https://example.com", "GET", {} /* headers */, {} /* data */);
 	if (resp) {
 		std::cout << "Success!" << std::endl;
 		std::cout << "Status code: " << resp.statusCode << std::endl;
