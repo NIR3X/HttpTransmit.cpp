@@ -66,9 +66,8 @@ CHttpTransmit::CResponse CHttpTransmit::TransmitTo(
 		return {};
 	}
 
-	uint32_t statusCode;
-	std::vector<uint8_t> resultEnc = CHttpRequest::Request(transmitUrl, options, statusCode);
-	CHttpTransmit::CResponse response = { false, statusCode, {} };
+	CHttpTransmit::CResponse response;
+	std::vector<uint8_t> resultEnc = CHttpRequest::Request(transmitUrl, options, response.statusCode);
 	if (resultEnc.size() >= CFxms::HashLen + CFxms::MaskLen) {
 		std::vector<uint8_t> result;
 		CFxms::Status status = CFxms::Decrypt(sessionKey, resultEnc, result, CFxms::Mode::OptimizeEncryption);
