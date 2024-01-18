@@ -52,6 +52,9 @@ int main() {
 		std::cout << "Success!" << std::endl;
 		std::cout << "Status code: " << resp.statusCode << std::endl;
 		std::cout << "Response data: " << std::string(resp.data.begin(), resp.data.end()) << std::endl;
+	} else if (resp.statusCode == CHttpTransmit::AuthorizationRequired) {
+		std::cout << "Connection closed!" << std::endl;
+		// You can try to reconnect here if you want
 	} else {
 		std::cout << "Failure!" << std::endl;
 	}

@@ -15,6 +15,7 @@ protected:
 
 public:
 	static const int SessionIdLen;
+	static const uint32_t AuthorizationRequired;
 
 	class CResponse {
 	public:

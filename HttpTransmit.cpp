@@ -5,6 +5,7 @@
 #include "HttpTransmit.h"
 
 const int CHttpTransmit::SessionIdLen = 32;
+const uint32_t CHttpTransmit::AuthorizationRequired = 401;
 
 std::wstring CHttpTransmit::NewSessionId() {
 	std::vector<uint8_t> sessionIdRaw(SessionIdLen);
