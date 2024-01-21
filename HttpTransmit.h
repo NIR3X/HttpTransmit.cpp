@@ -14,8 +14,8 @@ protected:
 	std::vector<uint8_t> sessionKey;
 
 public:
-	static const uint32_t AuthorizationRequired;
-	static const int SessionIdLen;
+	static constexpr uint32_t AuthorizationRequired = 401;
+	static constexpr int SessionIdLen = 32;
 
 	class CResponse {
 	public:
