@@ -1,8 +1,6 @@
 #include "Base64.h"
 #include <sstream>
 
-const std::string CBase64::Alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
-
 std::string CBase64::Encode(const std::vector<uint8_t>& data) {
 	std::stringstream encodedStream = {};
 
@@ -23,14 +21,14 @@ std::string CBase64::Encode(const std::vector<uint8_t>& data) {
 	} while (i < data.size());
 
 	switch (data.size() % 3) {
-		case 1:
-			encodedStream.seekp(-2, std::ios_base::end);
-			encodedStream << "==";
-			break;
-		case 2:
-			encodedStream.seekp(-1, std::ios_base::end);
-			encodedStream << "=";
-			break;
+	case 1:
+		encodedStream.seekp(-2, std::ios_base::end);
+		encodedStream << "==";
+		break;
+	case 2:
+		encodedStream.seekp(-1, std::ios_base::end);
+		encodedStream << "=";
+		break;
 	}
 
 	return encodedStream.str();
