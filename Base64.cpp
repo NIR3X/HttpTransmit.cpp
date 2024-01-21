@@ -1,6 +1,8 @@
 #include "Base64.h"
 #include <sstream>
 
+const std::string CBase64::Alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+
 std::string CBase64::Encode(const std::vector<uint8_t>& data) {
 	std::stringstream encodedStream = {};
 
