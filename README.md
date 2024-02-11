@@ -17,7 +17,7 @@ make
 Here is an example of how to use the HTTP Transmit C++ client:
 
 ```cpp
-#include "HttpTransmit.cpp/HttpTransmit.h"
+#include "HttpTransmit.h"
 #include <iostream>
 
 int main() {
